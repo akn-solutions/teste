@@ -52,7 +52,7 @@
                 x:Name="FeedbackText"
                 Text="Mude o tema usando o dropdown acima"
                 TextAlignment="Center"
-                Foreground="{DynamicResource WindowForegroundBrush}"
+                Foreground="{DynamicResource AccentBrush}"
                 FontSize="12"
                 Margin="0,10,0,0"/>
 
