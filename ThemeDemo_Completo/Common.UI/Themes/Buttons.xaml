@@ -1,0 +1,484 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:System="clr-namespace:System;assembly=mscorlib">
+
+    <!-- Default Button -->
+    <Style x:Key="StyleDefaultButton">
+        <Setter Property="Control.Foreground" Value="{DynamicResource CorBlack}" />
+        <Setter Property="Control.BorderBrush" Value="{DynamicResource CorGreen500}" />
+        <Setter Property="Control.FontSize" Value="12" />
+        <Setter Property="Control.Width" Value="120" />
+        <Setter Property="Control.Height" Value="{DynamicResource ControlsHeight}" />
+        <Style.Triggers>
+            <Trigger Property="Control.IsMouseOver" Value="True">
+                <Setter Property="Control.Foreground" Value="{DynamicResource CorBlack}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    
+    <!-- Button Clear -->
+    <Style
+        x:Key="StyleButtonClear"
+        BasedOn="{StaticResource StyleDefaultButton}"
+        TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{DynamicResource CorWhite}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border
+                        x:Name="border"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="5"
+                        Cursor="Hand"
+                        SnapsToDevicePixels="true">
+                        <ContentPresenter
+                            x:Name="contentPresenter"
+                            Margin="{TemplateBinding Padding}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            Focusable="False"
+                            RecognizesAccessKey="True"
+                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <!--<Setter Property="Foreground" Value="{DynamicResource CorBlack}"/>-->
+                <Setter Property="Background" Value="{DynamicResource CorGreen500}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>    
+
+    <!-- Button Clear Image -->
+    <Style
+        x:Key="StyleButtonClearImage"
+        BasedOn="{StaticResource StyleDefaultButton}"
+        TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{DynamicResource CorWhite}" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Width" Value="100" />
+        <Setter Property="Height" Value="100" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border
+                        x:Name="border"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="5"
+                        Cursor="Hand"
+                        SnapsToDevicePixels="true">
+                        <ContentPresenter
+                            x:Name="contentPresenter"
+                            Margin="{TemplateBinding Padding}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            Focusable="False"
+                            RecognizesAccessKey="True"
+                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <!--<Setter Property="Foreground" Value="{DynamicResource CorBlack}"/>-->
+                <Setter Property="Background" Value="{DynamicResource CorGreen500}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <!--#region Style Button New / Criar / Aplicar-->
+    <Style
+        x:Key="StyleButtonOk"
+        BasedOn="{StaticResource StyleDefaultButton}"
+        TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{DynamicResource CorGreen500}" />
+        <Setter Property="Foreground" Value="{DynamicResource CorWhite}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource CorGreen500}" />
+        <Setter Property="Width" Value="{DynamicResource ButtonsWidth}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="5"
+                        Cursor="Hand">
+                        <Grid Width="110">
+                            <TextBlock
+                                Height="20"
+                                Margin="5,2,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                Text="{TemplateBinding Content}" />
+                            <TextBlock
+                                Margin="0,0,5,0"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                FontFamily="Kanit Medium"
+                                FontSize="20"
+                                Text="→" />
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource CorGreen600}" />
+                <Setter Property="Foreground" Value="{DynamicResource CorWhite}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource CorGreen500}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{DynamicResource CorGreen700}" />
+                <Setter Property="Foreground" Value="{DynamicResource CorWhite}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource CorGreen500}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <!--#endregion-->
+    
+
+    <!--#region Style Button Cancelar-->
+    <Style
+        x:Key="StyleButtonCancel"
+        BasedOn="{StaticResource StyleDefaultButton}"
+        TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{DynamicResource CorRed500}" />
+        <Setter Property="Foreground" Value="{DynamicResource CorWhite}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource CorRed500}" />
+        <Setter Property="Width" Value="{DynamicResource ButtonsWidth}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="5"
+                        Cursor="Hand">
+                        <Grid Width="115">
+                            <TextBlock
+                                Height="20"
+                                Margin="5,2,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                Text="{TemplateBinding Content}" />
+                            <TextBlock
+                                Margin="0,0,-10,5"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                FontFamily="GOST Common"
+                                FontSize="30"
+                                Text="+">
+                                <TextBlock.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="45" />
+                                    </TransformGroup>
+                                </TextBlock.RenderTransform>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource CorRed600}" />
+                <Setter Property="Foreground" Value="{DynamicResource CorWhite}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource CorRed500}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{DynamicResource CorRed700}" />
+                <Setter Property="Foreground" Value="{DynamicResource CorWhite}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource CorRed500}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <!--#endregion-->
+    
+    
+    <!-- Button Adicionar-->
+    <Style
+        x:Key="StyleButtonAdd"
+        BasedOn="{StaticResource StyleDefaultButton}"
+        TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{DynamicResource CorWhite}" />
+        <Setter Property="Width" Value="{DynamicResource ButtonsWidth}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="5"
+                        Cursor="Hand">
+                        <Grid Width="120">
+                            <TextBlock
+                                Height="20"
+                                Margin="5,0,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                Text="{TemplateBinding Content}" />
+                            <TextBlock
+                                Margin="0,0,10,8"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                FontFamily="GOST Common"
+                                FontSize="30"
+                                Text="+" />
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <!--<Setter Property="Foreground" Value="{DynamicResource CorBlack}"/>-->
+                <Setter Property="Background" Value="{DynamicResource CorGreen500}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <!-- Button Adicionar Circular -->
+    <Style
+        x:Key="StyleButtonAddCircular"
+        BasedOn="{StaticResource StyleDefaultButton}"
+        TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{DynamicResource CorWhite}" />
+        <Setter Property="Width" Value="35" />
+        <Setter Property="Height" Value="35" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="17.5"
+                        Cursor="Hand">
+                        <Grid>
+                            <TextBlock
+                                Height="20"
+                                Margin="0,0,0,6"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontFamily="Arial"
+                                FontSize="22"
+                                Foreground="{TemplateBinding Foreground}"
+                                Text="+" />
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <!--<Setter Property="Foreground" Value="{DynamicResource CorBlack}"/>-->
+                <Setter Property="Background" Value="{DynamicResource CorGreen500}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <!-- Button Parametros -->
+    <Style
+        x:Key="StyleButtonConfiguracoes"
+        BasedOn="{StaticResource StyleDefaultButton}"
+        TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{DynamicResource CorAmbar500}" />
+        <Setter Property="Foreground" Value="{DynamicResource CorWhite}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource CorAmbar500}" />
+        <Setter Property="Width" Value="148" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="5"
+                        Cursor="Hand">
+                        <StackPanel Margin="10,0" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock
+                                Margin="0,0,8,0"
+                                VerticalAlignment="Center"
+                                FontFamily="Segoe MDL2 Assets"
+                                FontSize="15"
+                                Text="&#xE713;" />
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                Text="{TemplateBinding Content}" />
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource CorAmbar600}" />
+                <Setter Property="Foreground" Value="{DynamicResource CorWhite}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{DynamicResource CorAmbar700}" />
+                <Setter Property="Foreground" Value="{DynamicResource CorWhite}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+
+    <!-- Button Remove -->
+    <Style x:Key="StyleButtonRemove" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{DynamicResource Button.Static.Background_Remove}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="Width" Value="{DynamicResource ButtonFolderHeight}" />
+        <Setter Property="Height" Value="{DynamicResource ButtonFolderHeight}" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border1" Background="{TemplateBinding Background}" />
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="border1" Property="Background" Value="{DynamicResource Button.MouseOver.Background_Remove}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+
+    <!-- Button Folder -->
+    <Style x:Key="StyleButtonFolder" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{DynamicResource Button.Static.Background_Folder}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="Width" Value="{DynamicResource ButtonFolderHeight}" />
+        <Setter Property="Height" Value="{DynamicResource ButtonFolderHeight}" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border1" Background="{TemplateBinding Background}" />
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="border1" Property="Background" Value="{DynamicResource Button.MouseOver.Background_Folder}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <!-- Button Settings -->
+    <Style x:Key="StyleButtonSettings" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{DynamicResource Button.Static.Background_Settings}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="Width" Value="{DynamicResource ButtonFolderHeight}" />
+        <Setter Property="Height" Value="{DynamicResource ButtonFolderHeight}" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border1" Background="{TemplateBinding Background}" />
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="border1" Property="Background" Value="{DynamicResource Button.MouseOver.Background_Settings}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Button File TXT -->
+    <Style x:Key="StyleButtonFileTxt" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{DynamicResource Button.Static.Background_FileTxt}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="Width" Value="{DynamicResource ButtonFolderHeight}" />
+        <Setter Property="Height" Value="{DynamicResource ButtonFolderHeight}" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border1" Background="{TemplateBinding Background}" />
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="border1" Property="Background" Value="{DynamicResource Button.MouseOver.Background_FileTxt}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <!-- Button Minimize -->
+    <Style x:Key="StyleButtonMinimize" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{DynamicResource Button.Static.Background_Minimize}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="Width" Value="{DynamicResource ButtonFolderHeight}" />
+        <Setter Property="Height" Value="{DynamicResource ButtonFolderHeight}" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border1" Background="{TemplateBinding Background}" />
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="border1" Property="Background" Value="{DynamicResource Button.MouseOver.Background_Minimize}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <!-- Button SWPart -->
+    <Style x:Key="StyleButtonSWPart" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{DynamicResource Button.Static.Background_SWPart}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="Width" Value="{DynamicResource ButtonFolderHeight}" />
+        <Setter Property="Height" Value="{DynamicResource ButtonFolderHeight}" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border1" Background="{TemplateBinding Background}" />
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="border1" Property="Background" Value="{DynamicResource Button.MouseOver.Background_SWPart}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

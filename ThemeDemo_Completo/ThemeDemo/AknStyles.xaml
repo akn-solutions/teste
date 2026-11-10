@@ -1,0 +1,42 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--xmlns:ui="clr-namespace:Common.UI.Styles">-->
+
+    <ResourceDictionary.MergedDictionaries>
+        <!-- Não alterar a ordem, pois os ultimos dependem dos primeiros -->
+        <ResourceDictionary Source="/Common.UI;component/Themes/Colors.xaml"/>
+        <ResourceDictionary Source="/Common.UI;component/Themes/Brushes.xaml"/>
+        <ResourceDictionary Source="/Common.UI;component/Themes/Sizes.xaml"/>
+        <ResourceDictionary Source="/Common.UI;component/Themes/Thicknesss.xaml"/>
+        <ResourceDictionary Source="/Common.UI;component/Themes/Buttons.xaml"/>
+        <ResourceDictionary Source="/Common.UI;component/Themes/TextBoxes.xaml"/>
+        <ResourceDictionary Source="/Common.UI;component/Themes/TextBlocks.xaml"/>
+        <ResourceDictionary Source="/Common.UI;component/Themes/CheckBoxs.xaml"/>
+        <ResourceDictionary Source="/Common.UI;component/Themes/RadioButtons.xaml"/>
+        <ResourceDictionary Source="/Common.UI;component/Themes/ComboBoxes.xaml"/>
+        <ResourceDictionary Source="/Common.UI;component/Themes/Labels.xaml"/>
+        <ResourceDictionary Source="/Common.UI;component/Themes/PasswordBoxes.xaml"/>
+        <ResourceDictionary Source="/Common.UI;component/Themes/StackPanels.xaml"/>
+        <ResourceDictionary Source="/Common.UI;component/Themes/ListViews.xaml"/>
+        <ResourceDictionary Source="/Common.UI;component/Themes/TreeViewItems.xaml"/>
+        <ResourceDictionary Source="/Common.UI;component/Themes/Windows.xaml"/>
+        <!--<ui:ThemeResourceDictionary Source="Colors.xaml"/>
+        <ui:ThemeResourceDictionary Source="Brushes.xaml"/>
+        <ui:ThemeResourceDictionary Source="Sizes.xaml"/>
+        <ui:ThemeResourceDictionary Source="Thicknesss.xaml"/>
+        <ui:ThemeResourceDictionary Source="Buttons.xaml"/>
+        <ui:ThemeResourceDictionary Source="TextBoxes.xaml"/>
+        <ui:ThemeResourceDictionary Source="TextBlocks.xaml"/>
+        <ui:ThemeResourceDictionary Source="CheckBoxs.xaml"/>
+        <ui:ThemeResourceDictionary Source="RadioButtons.xaml"/>
+        <ui:ThemeResourceDictionary Source="ComboBoxes.xaml"/>
+        <ui:ThemeResourceDictionary Source="Labels.xaml"/>
+        <ui:ThemeResourceDictionary Source="PasswordBoxes.xaml"/>
+        <ui:ThemeResourceDictionary Source="StackPanels.xaml"/>
+        <ui:ThemeResourceDictionary Source="ListViews.xaml"/>
+        <ui:ThemeResourceDictionary Source="TreeViewItems.xaml"/>
+        <ui:ThemeResourceDictionary Source="Windows.xaml"/>-->
+
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

@@ -1,0 +1,11 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:System="clr-namespace:System;assembly=mscorlib">
+
+    <System:Double x:Key="ControlsHeight">34</System:Double>
+    <System:Double x:Key="ButtonFolderHeight">39</System:Double>
+    <System:Double x:Key="ButtonsWidth">120</System:Double>
+    <System:Double x:Key="ButtonsHeight">35</System:Double>
+
+</ResourceDictionary>

@@ -1,0 +1,62 @@
+<Window x:Class="ThemeDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Theme Demo"
+        Height="350"
+        Width="450"
+        Background="{DynamicResource WindowBackgroundBrush}"
+        Foreground="{DynamicResource WindowForegroundBrush}"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+
+            <!-- Label para o dropdown -->
+            <TextBlock
+                Text="Selecione o Tema:"
+                FontSize="18"
+                FontWeight="Bold"
+                Foreground="{DynamicResource WindowForegroundBrush}"
+                Margin="0,0,0,15"/>
+
+            <!-- Dropdown de temas -->
+            <ComboBox x:Name="ThemeCombo" IsEditable="True"
+                Width="200" 
+                Height="40" 
+                Padding="10" 
+                Margin="0,0,0,20"
+                Background="{DynamicResource CorWhite}"
+                Foreground="{DynamicResource CorBlack}"
+                SelectionChanged="ThemeCombo_SelectionChanged">
+                <ComboBoxItem Content="Light"/>
+                <ComboBoxItem Content="Dark"/>
+                <ComboBoxItem Content="System" IsSelected="True"/>
+            </ComboBox>
+
+            <!-- Botão de exemplo -->
+            <Button
+                x:Name="DemoButton"
+                Width="200"
+                Height="50"
+                Content="Clique em Mim"
+                FontSize="14"
+                Background="{DynamicResource AccentBrush}"
+                Foreground="{DynamicResource WindowForegroundBrush}"
+                Click="DemoButton_Click"
+                Padding="10"
+                Margin="0,0,0,20"
+                Cursor="Hand"/>
+
+            <!-- TextBlock para feedback -->
+            <TextBlock
+                x:Name="FeedbackText"
+                Text="Mude o tema usando o dropdown acima"
+                TextAlignment="Center"
+                Foreground="{DynamicResource WindowForegroundBrush}"
+                FontSize="12"
+                Margin="0,10,0,0"/>
+
+        </StackPanel>
+    </Grid>
+
+</Window>

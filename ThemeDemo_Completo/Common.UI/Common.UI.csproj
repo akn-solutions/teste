@@ -1,0 +1,126 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+	<PropertyGroup>
+		<TargetFrameworks>net481</TargetFrameworks>
+		<!-- Usa a versão mais recente do C# compatível com o Framework netstandard(version) -->
+		<LangVersion>latest</LangVersion>
+		<Platforms>x64</Platforms>
+		<UseWPF>true</UseWPF>
+		<AssemblyName>Common.UI</AssemblyName>
+		<!-- Output correto para x64 -->
+		<OutputPath>bin\x64\$(Configuration)\</OutputPath>
+		<!--evita de criar a sub pasta com nome do framework -->
+		<!--antes ->  bin\x64\Debug\netstandard2.0-->
+		<!--depois ->  bin\x64\Debug-->
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<UseWindowsForms>true</UseWindowsForms>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+		<!--Obriga a gerar o arquivo .pdb que permite o debug-->
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
+		<!--Impede de gerar o arquivo .pdb que permite o debug-->
+		<DebugSymbols>false</DebugSymbols>
+		<DebugType>none</DebugType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Resources\**" />
+		<EmbeddedResource Remove="Resources\**" />
+		<None Remove="Resources\**" />
+	</ItemGroup>
+
+	<!-- Xaml de Themes: SDK trata como Page, precisa ser Resource -->
+	<ItemGroup>
+		<Page Remove="Themes\**" />
+		<Resource Include="Themes\**" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="Assets\Icons\configuracao.ico" />
+	  <None Remove="Assets\Icons\edit_template.ico" />
+	  <None Remove="Assets\Icons\email.ico" />
+	  <None Remove="Assets\Icons\focco.ico" />
+	  <None Remove="Assets\Icons\logo_akn.ico" />
+	  <None Remove="Assets\Icons\obter_codigo.ico" />
+	  <None Remove="Assets\Images\akn.png" />
+	  <None Remove="Assets\Images\anexo.png" />
+	  <None Remove="Assets\Images\anexo_select.png" />
+	  <None Remove="Assets\Images\close.png" />
+	  <None Remove="Assets\Images\close_select.png" />
+	  <None Remove="Assets\Images\codigo_automatico.png" />
+	  <None Remove="Assets\Images\codigo_manual.png" />
+	  <None Remove="Assets\Images\descricao_default.png" />
+	  <None Remove="Assets\Images\descricao_edit.png" />
+	  <None Remove="Assets\Images\doc_assembly.png" />
+	  <None Remove="Assets\Images\doc_bolted_connection.png" />
+	  <None Remove="Assets\Images\doc_content_center.png" />
+	  <None Remove="Assets\Images\doc_derived_part.png" />
+	  <None Remove="Assets\Images\doc_drawing.png" />
+	  <None Remove="Assets\Images\doc_frame.png" />
+	  <None Remove="Assets\Images\doc_library.png" />
+	  <None Remove="Assets\Images\doc_part.png" />
+	  <None Remove="Assets\Images\doc_presentation.png" />
+	  <None Remove="Assets\Images\doc_shaft.png" />
+	  <None Remove="Assets\Images\doc_sheet_metal.png" />
+	  <None Remove="Assets\Images\doc_sub_barra_chata.png" />
+	  <None Remove="Assets\Images\doc_sub_barra_quadrada.png" />
+	  <None Remove="Assets\Images\doc_sub_barra_redonda.png" />
+	  <None Remove="Assets\Images\doc_sub_barra_roscada.png" />
+	  <None Remove="Assets\Images\doc_sub_barra_sextavada.png" />
+	  <None Remove="Assets\Images\doc_sub_perfil_c.png" />
+	  <None Remove="Assets\Images\doc_sub_perfil_u.png" />
+	  <None Remove="Assets\Images\doc_sub_perfil_w.png" />
+	  <None Remove="Assets\Images\doc_sub_tubo_quadrado.png" />
+	  <None Remove="Assets\Images\doc_sub_tubo_redondo.png" />
+	  <None Remove="Assets\Images\doc_sub_tubo_retangular.png" />
+	  <None Remove="Assets\Images\doc_sub_tubo_sextavado.png" />
+	  <None Remove="Assets\Images\doc_weldment.png" />
+	  <None Remove="Assets\Images\edit_template.png" />
+	  <None Remove="Assets\Images\email.png" />
+	  <None Remove="Assets\Images\file_txt.png" />
+	  <None Remove="Assets\Images\file_txt_select.png" />
+	  <None Remove="Assets\Images\flatpattern.png" />
+	  <None Remove="Assets\Images\folder.png" />
+	  <None Remove="Assets\Images\folder_select.png" />
+	  <None Remove="Assets\Images\inventor.png" />
+	  <None Remove="Assets\Images\letra_e.png" />
+	  <None Remove="Assets\Images\letra_i.png" />
+	  <None Remove="Assets\Images\letra_n.png" />
+	  <None Remove="Assets\Images\material.png" />
+	  <None Remove="Assets\Images\minimize.png" />
+	  <None Remove="Assets\Images\minimize_select.png" />
+	  <None Remove="Assets\Images\properties.png" />
+	  <None Remove="Assets\Images\properties_select.png" />
+	  <None Remove="Assets\Images\remove.png" />
+	  <None Remove="Assets\Images\remove_select.png" />
+	  <None Remove="Assets\Images\settings.png" />
+	  <None Remove="Assets\Images\settings_orange.png" />
+	  <None Remove="Assets\Images\settings_select.png" />
+	  <None Remove="Assets\Images\sw_doc_assembly_color.png" />
+	  <None Remove="Assets\Images\sw_doc_part.png" />
+	  <None Remove="Assets\Images\sw_doc_part_color.png" />
+	  <None Remove="Assets\Images\sw_doc_part_select.png" />
+	</ItemGroup>
+	
+	<!-- Define tudo dentro da pasta Assets como Resources -->
+	<ItemGroup>
+		<Resource Include="Assets\**" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Resource Remove="Themes\DarkTheme.xaml" />
+	  <Resource Remove="Themes\LightTheme.xaml" />
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.142" />
+	  <PackageReference Include="Ookii.Dialogs.Wpf" Version="5.0.1" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Page Include="Themes\DarkTheme.xaml" />
+	  <Page Include="Themes\LightTheme.xaml" />
+	</ItemGroup>
+
+</Project>
